@@ -57,44 +57,5 @@ alias docrun='docker-compose run app sh -c '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '^[[A' fzf-history-widget
 
-cd:wb() {
-	cd /Users/khamui/Desygner/remote_dev/webrand
-}
-
-wb:install () {
-  cd:wb
-  cd builder
-  npm install
-  jspm install
-  sed -i '' -E 's,"(github|npm)\:\*": "../web/vendor,"\1\:\*": "vendor,g' config.js
-}
-
-wb:g:a() {
-  wb:install
-  gulp bundle
-  gulp build
-  gulp watch
-}
-
-wb:s() {
-	unison -sshargs="-i /Users/khamui/.ssh/kha_office" /Users/khamui/Desygner/remote_dev/webrand ssh://platypus@192.168.1.100//home/platypus/dev/data/sync/kha/webrand 2>/dev/tty -batch -confirmbigdel=false -perms=0 -prefer newer -ignore="Name node_modules" -ignore="Name bower_components" -ignore="Name var/cache" -ignore="Name ./vendor" -ignore="Name .git"
-}
-
-o:web() {
-  start='open -a safari '
-  calamari='https://desygner.calamari.io'
-  gsuite='https://workspace.google.com/dashboard'
-  youtrack='https://desygner-team.myjetbrains.com/youtrack/'
-  beanstalk='https://inkive.beanstalkapp.com'
-  
-  eval $start$calamari
-  eval $start$gsuite
-  eval $start$youtrack
-  eval $start$beanstalk
-}
-
-# to build neovide
-. "$HOME/.cargo/env"
-
 path+='/usr/local/bin/flake8'
 path+='/usr/local/bin'
