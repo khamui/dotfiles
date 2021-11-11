@@ -1,0 +1,14 @@
+/*
+!/.gitignore
+!.zshrc
+!.zshenv
+# un-ignore subfolder
+!/.config/
+/.config/*
+!/.config/nvim/
+/.config/nvim/*
+!/.config/nvim/init.lua
+!/.config/nvim/kha.nvim
+!/.config/nvim/kha.plugins
+!/.config/nvim/lua
+!/.config/nvim/ftplugin
