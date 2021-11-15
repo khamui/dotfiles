@@ -1,2 +1,6 @@
 vim.cmd('source ~/.config/nvim/kha.plugins')
-vim.cmd('source ~/.config/nvim/kha.nvim')
+-- vim.cmd('source ~/.config/nvim/kha.nvim')
+require('appearance')
+require('aliases')
+require('keymappings')
+require('denite')
