@@ -11,6 +11,6 @@ cmd [[
 
 -- File Aliases (starting with .)
 cmd [[
-  let $Z="$HOME/.zshrc"
-  let $INIT="$HOME/.config/nvim/init.lua"
+  let $z="$HOME/.zshrc"
+  let $init="$HOME/.config/nvim/init.lua"
 ]]
