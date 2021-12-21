@@ -5,6 +5,7 @@ require('appearance')
 require('aliases')
 require('keymappings')
 require('denite')
+require('funcs')
 
 -- vim.cmd [[let g:ale_linters = {'javascript': ['eslint']}]]
 vim.cmd [[filetype plugin on]]
