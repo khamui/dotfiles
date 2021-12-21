@@ -13,7 +13,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- cmd [[Plug 'easymotion/vim-easymotion'
 
 -- Intellisense Engine
-Plug ('neoclide/coc.nvim', {['branch'] = 'release'})
+-- Plug ('neoclide/coc.nvim', {['branch'] = 'release'})
 
 -- LSP
 Plug 'dense-analysis/ale'
