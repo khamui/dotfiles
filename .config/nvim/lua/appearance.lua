@@ -1,5 +1,4 @@
 local cmd = vim.cmd
-cmd "highlight LineNr ctermfg=253"
 cmd "syntax enable"
 cmd "colorscheme quietlight"
 
@@ -20,9 +19,15 @@ opt.smartindent = true
 opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 4
+opt.foldcolumn = "2"
 opt.hls = false
 opt.splitbelow = true
 opt.splitright = true
 opt.backspace = "indent,eol,start"
 opt.colorcolumn="80"
 opt.mouse="a"
+
+cmd "highlight ColorColumn ctermbg=255"
+cmd "highlight LineNr ctermfg=252"
+cmd "highlight LineNr ctermbg=231"
+cmd "highlight FoldColumn ctermbg=231"
