@@ -69,7 +69,7 @@ cmd [[call v:lua.profile(v:lua.getOpts())]]
 map('n', ';', ':Denite buffer<CR>', {})
 map('n', '<leader>t', ':DeniteProjectDir file/rec<CR>', {})
 map('n', '<leader>g', ':<C-u>Denite grep:. -no-empty<CR>', {noremap = true})
-map('n', '<leader>j', ':<C-u>DeniteCursorWord grep:.<CR>', {noremap = true})
+map('n', '<leader>f', ':<C-u>DeniteCursorWord grep:.<CR>', {noremap = true})
 
 -- Define mappings while in 'filter' mode
 --   <C-o>         - Switch to normal mode inside of search results
