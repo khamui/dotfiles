@@ -39,11 +39,15 @@ local function get_next_empty_line(prev_pos, curr_pos, direction)
   end
 end
 
-function M.copy_to_next_empty_line(direction)
+function M.go_to_next_empty_line(direction)
   local curr_pos, _ = unpack(vim.api.nvim_win_get_cursor(0))
   local prev_pos = nil
   local cursor_pos = get_next_empty_line(prev_pos, curr_pos, direction)
   set_cursor_to(cursor_pos)
+end
+
+function M.copy_to_next_empty_line(direction)
+  M.go_to_next_empty_line(direction)
   paste_from_last_register()
 end
 
