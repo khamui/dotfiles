@@ -11,6 +11,7 @@ map('v', 'H', '0', {noremap = true})
 map('n', 'L', 'A<ESC>', {noremap = true})
 map('v', 'L', 'A<ESC>', {noremap = true})
 map('n', 'vv', '0v$', {noremap = true})
+map('n', '<C-A>', 'gg0vG$', {noremap = true})
 
 -- split navigation
 map('n', '¬', ':vsp<CR>', {noremap = true})
@@ -30,3 +31,5 @@ map('n', '<leader>o', 'o<ESC>', {noremap = true})
 map('n', '<leader>O', 'O<ESC>', {noremap = true})
 map('n', '<leader>p', ':lua require("funcs").copy_to_next_empty_line("down")<CR>', {noremap = true })
 map('n', '<leader>P', ':lua require("funcs").copy_to_next_empty_line("up")<CR>', {noremap = true })
+map('n', '<leader>j', ':lua require("funcs").go_to_next_empty_line("down")<CR>', {noremap = true })
+map('n', '<leader>k', ':lua require("funcs").go_to_next_empty_line("up")<CR>', {noremap = true })
