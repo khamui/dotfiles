@@ -33,3 +33,4 @@ map('n', '<leader>p', ':lua require("funcs").copy_to_next_empty_line("down")<CR>
 map('n', '<leader>P', ':lua require("funcs").copy_to_next_empty_line("up")<CR>', {noremap = true })
 map('n', '<leader>j', ':lua require("funcs").go_to_next_empty_line("down")<CR>', {noremap = true })
 map('n', '<leader>k', ':lua require("funcs").go_to_next_empty_line("up")<CR>', {noremap = true })
+map('n', '<leader>p', ':lua require("funcs").is_function_def()<CR>', {noremap = true })

@@ -1,5 +1,7 @@
 local M = {}
 
+local matchers = require('matchers')
+
 local function get_curr_line_text(curr_pos)
   return pcall(vim.api.nvim_buf_get_lines, 0, curr_pos - 1, curr_pos, false)
 end
@@ -49,6 +51,20 @@ end
 function M.copy_to_next_empty_line(direction)
   M.go_to_next_empty_line(direction)
   paste_from_last_register()
+end
+
+function M.is_function_def()
+  local curr_pos, _ = unpack(vim.api.nvim_win_get_cursor(0))
+  local ok, retval = get_curr_line_text(curr_pos)
+  if ok then
+    local curr_line = retval[1]
+    if (matchers.has_keyword('function', curr_line)) then
+      print('Yes, is function definition')
+    else
+      print('No, is not a function definition')
+    end
+
+  end
 end
 
 return M
