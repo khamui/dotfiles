@@ -63,7 +63,6 @@ function M.is_function_def()
     else
       print('No, is not a function definition')
     end
-
   end
 end
 

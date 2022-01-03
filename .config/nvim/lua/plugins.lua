@@ -24,6 +24,9 @@ Plug 'chemzqm/vim-jsx-improve'
 -- Denite - Fuzzy finding, buffer management
 Plug('Shougo/denite.nvim', {['do'] = ':UpdateRemotePlugins'})
 
+-- Moving code and duplicating
+Plug 'booperlv/nvim-gomove'
+
 -- Snippet support
 -- cmd [[Plug 'Shougo/neosnippet'
 -- cmd [[Plug 'Shougo/neosnippet-snippets'
@@ -81,3 +84,16 @@ vim.call ('plug#end')
 
 -- set global ale linter for javascript 
 vim.cmd [[let g:ale_linters = {'javascript': ['eslint']}]]
+
+print('gomove setup')
+require("gomove").setup {
+  -- whether or not to map default key bindings, (true/false)
+  map_defaults = false,
+  -- what method to use for reindenting, ("vim-move" / "simple" / ("none"/nil))
+  reindent_mode = "vim-move",
+  -- whether to not to move past line when moving blocks horizontally, (true/false)
+  move_past_line = true,
+  -- whether or not to ignore indent when duplicating lines horizontally, (true/false)
+  ignore_indent_lh_dup = true,
+}
+
