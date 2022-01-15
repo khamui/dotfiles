@@ -66,4 +66,9 @@ function M.is_function_def()
   end
 end
 
+function M.get_function()
+  local thisbufnr = vim.api.nvim_get_current_buf()
+  matchers.find_function(thisbufnr, 'lua')
+end
+
 return M

@@ -2,6 +2,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+Plug 'nvim-treesitter/playground'
 -- === Editing cmd [[Plugins === --
 -- Trailing whitespace highlighting & automatic fixing
 -- cmd [[Plug 'ntpeters/vim-better-whitespace'
@@ -25,7 +27,8 @@ Plug 'chemzqm/vim-jsx-improve'
 Plug('Shougo/denite.nvim', {['do'] = ':UpdateRemotePlugins'})
 
 -- Moving code and duplicating
-Plug 'booperlv/nvim-gomove'
+-- Plug 'booperlv/nvim-gomove'
+Plug('~/Documents/Development/nvim/nvim-gomove', {branch = 'khamui-patch'})
 
 -- Snippet support
 -- cmd [[Plug 'Shougo/neosnippet'
@@ -85,15 +88,49 @@ vim.call ('plug#end')
 -- set global ale linter for javascript 
 vim.cmd [[let g:ale_linters = {'javascript': ['eslint']}]]
 
-print('gomove setup')
 require("gomove").setup {
   -- whether or not to map default key bindings, (true/false)
   map_defaults = false,
   -- what method to use for reindenting, ("vim-move" / "simple" / ("none"/nil))
   reindent_mode = "vim-move",
   -- whether to not to move past line when moving blocks horizontally, (true/false)
-  move_past_line = true,
+  move_past_end_col = true,
   -- whether or not to ignore indent when duplicating lines horizontally, (true/false)
   ignore_indent_lh_dup = true,
 }
 
+require'nvim-treesitter.configs'.setup {
+  incremental_selection = {
+    enable = true,
+    kecmaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  },
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { "BufWrite", "CursorHold" }
+  },
+  highlight = { enable = true }
+}
