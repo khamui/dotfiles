@@ -1,6 +1,7 @@
 local M = {}
 
 local matchers = require('matchers')
+local ample = require('ample')
 
 local function get_curr_line_text(curr_pos)
   return pcall(vim.api.nvim_buf_get_lines, 0, curr_pos - 1, curr_pos, false)
@@ -66,9 +67,9 @@ function M.is_function_def()
   end
 end
 
-function M.get_function()
+function M.ample_run()
   local thisbufnr = vim.api.nvim_get_current_buf()
-  matchers.find_function(thisbufnr, 'lua')
+  ample.find_function(thisbufnr, 'lua')
 end
 
 return M
