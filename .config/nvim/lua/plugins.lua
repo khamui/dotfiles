@@ -132,5 +132,5 @@ require'nvim-treesitter.configs'.setup {
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" }
   },
-  highlight = { enable = true }
+  highlight = { enable = false }
 }

@@ -48,7 +48,6 @@ map( "x", "<S-h>", "<Plug>GoVSMLeft", {} )
 map( "x", "<S-j>", "<Plug>GoVSMDown", {} )
 map( "x", "<S-k>", "<Plug>GoVSMUp", {} )
 map( "x", "<S-l>", "<Plug>GoVSMRight", {} )
-map( "n", "<S-l>", "Pferd", {} )
 
 --map( "n", "<C-h>", "<Plug>GoNSDLeft", {} )
 --map( "n", "<C-j>", "<Plug>GoNSDDown", {} )

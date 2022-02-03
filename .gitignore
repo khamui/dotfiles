@@ -1,7 +1,6 @@
 /*
 !/.gitignore
 !.zshrc
-!.zshenv
 # un-ignore subfolder
 !/.config/
 /.config/*
@@ -12,3 +11,9 @@
 !/.config/nvim/kha.plugins
 !/.config/nvim/lua
 !/.config/nvim/ftplugin
+
+# Local Netlify folder
+.netlify
+
+# Exclude env variables
+/.zshenv
