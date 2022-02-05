@@ -30,6 +30,8 @@ Plug('Shougo/denite.nvim', {['do'] = ':UpdateRemotePlugins'})
 -- Plug 'booperlv/nvim-gomove'
 Plug('~/Documents/Development/nvim/nvim-gomove', {branch = 'khamui-patch'})
 
+Plug 'MunifTanjim/nui.nvim'
+
 -- Snippet support
 -- cmd [[Plug 'Shougo/neosnippet'
 -- cmd [[Plug 'Shougo/neosnippet-snippets'
@@ -132,5 +134,5 @@ require'nvim-treesitter.configs'.setup {
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" }
   },
-  highlight = { enable = false }
+  highlight = { enable = true }
 }
