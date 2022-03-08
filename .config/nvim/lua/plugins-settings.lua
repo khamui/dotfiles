@@ -1,8 +1,31 @@
--- 
--- switch on global settings
+-- ********** GLOBAL SETTINGS **********
+--
 vim.cmd [[filetype plugin on]]
 vim.cmd [[let g:ale_fix_on_save = 0]]
+vim.g.completeopt="menu,menuone,noselect,noinsert"
 
+-- ********** CMP/LSP SETTINGS **********
+--
+local cmp = require('cmp')
+cmp.setup({
+  mapping = {
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+  },
+  sources = cmp.config.sources(
+    {{ name = 'nvim_lsp' }},
+    {{ name = 'buffer' }}
+  )
+})
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require'lspconfig'.tsserver.setup {
+  capabilities = capabilities
+}
+
+-- ********** TREESITTER SETTINGS **********
+--
 -- Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 -- Plug 'nvim-treesitter/playground'
 -- setting up treesitter and treesitter playground config
