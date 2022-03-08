@@ -7,7 +7,14 @@ Plug 'nvim-treesitter/playground'
 -- === Editing cmd [[Plugins === --
 -- Trailing whitespace highlighting & automatic fixing
 -- cmd [[Plug 'ntpeters/vim-better-whitespace'
-
+--
+-- automcompletion with lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 -- auto-close plugin
 -- cmd [[Plug 'rstacruz/vim-closer'
 
@@ -61,7 +68,7 @@ Plug('Shougo/denite.nvim', {['do'] = ':UpdateRemotePlugins'})
 -- cmd [[Plug 'othree/javascript-libraries-syntax.vim'
 
 -- Improved syntax highlighting and indentation
-Plug 'othree/yajs.vim'
+-- Plug 'othree/yajs.vim'
 
 -- === UI === --
 -- File explorer

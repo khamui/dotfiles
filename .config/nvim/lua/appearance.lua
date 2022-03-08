@@ -5,6 +5,8 @@ cmd "highlight ColorColumn ctermbg=255"
 cmd "highlight LineNr ctermfg=252"
 cmd "highlight LineNr ctermbg=231"
 cmd "highlight FoldColumn ctermbg=231"
+cmd "highlight NormalFloat ctermbg=255"
+cmd "highlight PMenu ctermbg=255"
 
 local map = vim.api.nvim_set_keymap
 map('i', 'jk', '<ESC>', {noremap = true})
