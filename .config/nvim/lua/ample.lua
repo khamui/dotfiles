@@ -11,6 +11,10 @@ local function blah()
   print('random func')
 end
 
+function yo()
+  print('yoyo')
+end
+
 function A.find_all_functions()
   local lang = 'lua'
   local bufnr = vim.api.nvim_get_current_buf()
@@ -23,7 +27,7 @@ function A.find_all_functions()
   (identifier) @function)
 (function_declaration
   (dot_index_expression
-    (identifier) @function-expr ))]])
+    field: (identifier) @function-expr ))]])
 
   A.all_funcs = {}
 
