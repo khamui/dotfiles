@@ -1,6 +1,10 @@
 local cmd = vim.cmd
 cmd "syntax enable"
 cmd "colorscheme quietlight"
+cmd "highlight ColorColumn ctermbg=255"
+cmd "highlight LineNr ctermfg=252"
+cmd "highlight LineNr ctermbg=231"
+cmd "highlight FoldColumn ctermbg=231"
 
 local map = vim.api.nvim_set_keymap
 map('i', 'jk', '<ESC>', {noremap = true})
@@ -27,8 +31,3 @@ opt.backspace = "indent,eol,start"
 opt.colorcolumn="80"
 opt.mouse="a"
 opt.guicursor="n-c:block,i-ci:ver50,r-cr-v-ve:hor80,o:hor50"
-
-cmd "highlight ColorColumn ctermbg=255"
-cmd "highlight LineNr ctermfg=252"
-cmd "highlight LineNr ctermbg=231"
-cmd "highlight FoldColumn ctermbg=231"
