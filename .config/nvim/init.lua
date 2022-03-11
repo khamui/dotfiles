@@ -7,5 +7,4 @@ require('aliases')
 require('keymappings')
 require('denite')
 require('funcs')
-
-
+require('lsp')

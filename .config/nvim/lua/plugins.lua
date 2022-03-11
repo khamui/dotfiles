@@ -9,7 +9,6 @@ Plug 'nvim-treesitter/playground'
 -- cmd [[Plug 'ntpeters/vim-better-whitespace'
 --
 -- automcompletion with lsp
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -19,6 +18,9 @@ Plug 'saadparwaiz1/cmp_luasnip'
 -- snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+-- lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 
 -- auto-close plugin
 -- cmd [[Plug 'rstacruz/vim-closer'
