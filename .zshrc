@@ -18,6 +18,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # navigation aliases
+alias v='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

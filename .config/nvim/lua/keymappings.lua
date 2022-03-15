@@ -1,7 +1,7 @@
 local g = vim.g
 local map = vim.api.nvim_set_keymap
 
-g.mapleader = ","
+g.mapleader = " "
 
 -- force remaps
 map('n', 'v', '<C-v>', {}) -- entering Visual Block 
@@ -38,23 +38,6 @@ map('n', '<leader>j', ':lua require("funcs").go_to_next_empty_line("down")<CR>',
 map('n', '<leader>k', ':lua require("funcs").go_to_next_empty_line("up")<CR>', {noremap = true })
 map('n', '<leader>p', ':lua require("funcs").is_function_def()<CR>', {noremap = true })
 
--- gomove mappings
--- map( "n", "<S-h>", "<Plug>GoNSMLeft", {} )
-map( "n", "<S-j>", "<Plug>GoNSMDown", {} )
-map( "n", "<S-k>", "<Plug>GoNSMUp", {} )
--- map( "n", "<S-l>", "<Plug>GoNSMRight", {} )
-
-map( "x", "<S-h>", "<Plug>GoVSMLeft", {} )
-map( "x", "<S-j>", "<Plug>GoVSMDown", {} )
-map( "x", "<S-k>", "<Plug>GoVSMUp", {} )
-map( "x", "<S-l>", "<Plug>GoVSMRight", {} )
-
---map( "n", "<C-h>", "<Plug>GoNSDLeft", {} )
---map( "n", "<C-j>", "<Plug>GoNSDDown", {} )
---map( "n", "<C-k>", "<Plug>GoNSDUp", {} )
---map( "n", "<C-l>", "<Plug>GoNSDRight", {} )
---
---map( "x", "<C-h>", "<Plug>GoVSDLeft", {} )
---map( "x", "<C-j>", "<Plug>GoVSDDown", {} )
---map( "x", "<C-k>", "<Plug>GoVSDUp", {} )
---map( "x", "<C-l>", "<Plug>GoVSDRight", {} )
+-- split resize
+map('n', '<leader>+', ':vertical resize +5<CR>', {noremap = true})
+map('n', '<leader>-', ':vertical resize -5<CR>', {noremap = true})
