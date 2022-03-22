@@ -87,6 +87,7 @@ Plug 'haystackandroid/shoji'
 -- Plug 'cocopon/iceberg.vim'
 -- Plug 'owickstrom/vim-colors-paramount'
 Plug 'aonemd/quietlight.vim'
+Plug('sonph/onehalf', {['rtp'] = 'vim/'})
 
 -- Customized vim status line
 Plug 'vim-airline/vim-airline'

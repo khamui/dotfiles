@@ -8,11 +8,11 @@ map('n', 'v', '<C-v>', {}) -- entering Visual Block
 
 -- general navigation
 map('i', 'jk', '<ESC>', {noremap = true})
-map('v', 'jk', '<ESC>', {noremap = true})
+map('v', '<Tab>', '<ESC>', {noremap = true})
 map('n', 'H', '0', {noremap = true})
 map('v', 'H', '0', {noremap = true})
 map('n', 'L', 'A<ESC>', {noremap = true})
-map('v', 'L', 'A<ESC>', {noremap = true})
+map('v', 'L', '$', {noremap = true})
 map('n', 'vv', '0v$', {noremap = true})
 map('n', '<C-A>', 'gg0vG$', {noremap = true})
 
