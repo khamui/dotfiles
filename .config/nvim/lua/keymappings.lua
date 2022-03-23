@@ -4,7 +4,7 @@ local map = vim.api.nvim_set_keymap
 g.mapleader = " "
 
 -- force remaps
-map('n', 'v', '<C-v>', {}) -- entering Visual Block 
+map('n', 'v', '<C-v>', {}) -- entering Visual Block
 
 -- general navigation
 map('i', 'jk', '<ESC>', {noremap = true})
