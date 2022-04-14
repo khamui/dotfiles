@@ -98,6 +98,7 @@ Plug 'vim-airline/vim-airline-themes'
 -- cmd [[Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 --
 Plug 'github/copilot.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 -- Initialize plugin system
 vim.call ('plug#end')
