@@ -1,6 +1,9 @@
 /*
+# single files in root
 !/.gitignore
 !.zshrc
+!.tmux.conf
+
 # un-ignore subfolder
 !/.config/
 /.config/*
