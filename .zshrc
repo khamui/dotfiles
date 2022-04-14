@@ -48,6 +48,10 @@ alias puconfig='cp -rf ~/{.vim,.gitconfig,.zshenv,.zshrc,.zshrceval} ~/Documents
 alias jup='cd ~/Documents/Development/Jupyter; jupyter-lab --browser=chrome'
 alias jupn='cd ~/Documents/Development/Jupyter; jupyter notebook --browser=chrome'
 
+# tmux aliases
+alias :q='exit'
+alias tx='tmux'
+
 # work aliases
 alias wd='cd $ENV'
 alias lqdeploy='ssh build@build.liqd.net deploy '
