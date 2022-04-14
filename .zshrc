@@ -52,6 +52,9 @@ alias jupn='cd ~/Documents/Development/Jupyter; jupyter notebook --browser=chrom
 alias :q='exit'
 alias tx='tmux'
 
+# lazygit aliases
+alias lg='lazygit'
+
 # work aliases
 alias wd='cd $ENV'
 alias lqdeploy='ssh build@build.liqd.net deploy '
