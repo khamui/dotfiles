@@ -14,5 +14,9 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend('force', sumneko_settings, opts)
   end
 
+  if server.name == 'tsserver' then
+    local tsserver_settings = require('lsp.settings.tsserver')
+    opts = vim.tbl_deep_extend('force', tsserver_settings, opts)
+  end
   server:setup(opts)
 end)
