@@ -96,6 +96,8 @@ Plug 'vim-airline/vim-airline-themes'
 -- Icons
 -- cmd [[Plug 'ryanoasis/vim-devicons'
 -- cmd [[Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+--
+Plug 'github/copilot.vim'
 
 -- Initialize plugin system
 vim.call ('plug#end')

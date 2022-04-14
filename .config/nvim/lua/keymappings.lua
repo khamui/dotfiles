@@ -41,3 +41,10 @@ map('n', '<leader>p', ':lua require("funcs").is_function_def()<CR>', {noremap = 
 -- split resize
 map('n', '<leader>+', ':vertical resize +5<CR>', {noremap = true})
 map('n', '<leader>-', ':vertical resize -5<CR>', {noremap = true})
+
+-- copilot overwrite
+vim.cmd [[
+imap <silent><script><expr> <leader><Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+]]
+
