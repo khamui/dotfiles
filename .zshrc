@@ -50,7 +50,7 @@ alias jupn='cd ~/Documents/Development/Jupyter; jupyter notebook --browser=chrom
 
 # tmux aliases
 alias :q='exit'
-alias tx='tmux'
+alias tmx='tmux'
 
 # lazygit aliases
 alias lg='lazygit'
@@ -67,3 +67,4 @@ bindkey '^[[A' fzf-history-widget
 
 path+='/usr/local/bin/flake8'
 path+='/usr/local/bin'
+export PATH="/Users/khamui:$PATH"
