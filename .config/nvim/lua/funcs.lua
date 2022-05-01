@@ -25,8 +25,13 @@ local function set_cursor_to(curr_pos)
   vim.api.nvim_win_set_cursor(0, { curr_pos, 0 })
 end
 
+local function get_last_line_of_buffer()
+  return vim.api.nvim_buf_line_count(0)
+end
+
 local function get_next_empty_line(prev_pos, curr_pos, direction)
   local ok, retval = get_curr_line_text(curr_pos)
+  local last_line = get_last_line_of_buffer()
   if ok then
     local curr_line = retval[1]
     if curr_line == '' and prev_pos ~= nil then
@@ -34,7 +39,11 @@ local function get_next_empty_line(prev_pos, curr_pos, direction)
     else
       prev_pos = curr_pos
       curr_pos = get_next_pos(curr_pos, direction)
-      return get_next_empty_line(prev_pos, curr_pos, direction)
+      if curr_pos > last_line then
+        return nil
+      else
+        return get_next_empty_line(prev_pos, curr_pos, direction)
+      end
     end
   else
     print('No new line available anymore (EOF?)')
@@ -45,7 +54,11 @@ function M.go_to_next_empty_line(direction)
   local curr_pos, _ = unpack(vim.api.nvim_win_get_cursor(0))
   local prev_pos = nil
   local cursor_pos = get_next_empty_line(prev_pos, curr_pos, direction)
-  set_cursor_to(cursor_pos)
+  if cursor_pos ~= nil and cursor_pos > 0 then
+    set_cursor_to(cursor_pos)
+  else
+    print('No new line available anymore (BOF or EOF)')
+  end
 end
 
 function M.copy_to_next_empty_line(direction)
