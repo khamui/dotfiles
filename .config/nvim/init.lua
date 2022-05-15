@@ -1,5 +1,3 @@
--- vim.cmd('source ~/.config/nvim/kha.plugins')
--- vim.cmd('source ~/.config/nvim/kha.nvim')
 require('plugins')
 require('plugins-settings')
 require('appearance')

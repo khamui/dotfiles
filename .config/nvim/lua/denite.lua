@@ -1,6 +1,6 @@
 -- Using shorter variable names
 local map = vim.api.nvim_set_keymap
-local bmap = vim.api.nvim_buf_set_keymap 
+local bmap = vim.api.nvim_buf_set_keymap
 local cmd = vim.cmd
 
 -- Removed due to conversion to lua -> Wrap in try/catch to avoid errors on initial install before plugin is available
@@ -44,10 +44,10 @@ function getOpts()
   denite_options['highlight_matched_range'] = 'Visual'
   denite_options['highlight_window_background'] = 'Visual'
   denite_options['highlight_filter_background'] = 'DiffAdd'
-  denite_options['winrow'] = 1 
-  denite_options['vertical_preview'] = 1 
+  denite_options['winrow'] = 1
+  denite_options['vertical_preview'] = 1
   return denite_options
-end  
+end
 
 -- Loop through denite options and enable them
 function profile(opts)
