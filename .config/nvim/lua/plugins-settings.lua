@@ -1,10 +1,11 @@
 -- ********** GLOBAL SETTINGS **********
---
+
 vim.cmd [[filetype plugin on]]
 vim.cmd [[let g:ale_fix_on_save = 0]]
 --vim.g.completeopt='menu,menuone,noselect,noinsert'
+
 -- ********** CMP/LSP SETTINGS **********
---
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
