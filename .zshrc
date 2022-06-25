@@ -1,22 +1,6 @@
 # Created by newuser for 5.7.1
 eval "$(starship init zsh)"
 
-# ANACONDA - JUPYTER
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/khamui/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/khamui/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/khamui/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/khamui/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # navigation aliases
 alias v='nvim'
 alias ..='cd ..'
@@ -45,8 +29,7 @@ alias zshreload='source ~/.zshrc'
 alias weather='curl v2.wttr.in'
 alias upconfig='cp -R ~/Documents/Development/devconfigs/{.vim,.gitconfig,.zshenv,.zshrc,.zshrceval} ~/'
 alias puconfig='cp -rf ~/{.vim,.gitconfig,.zshenv,.zshrc,.zshrceval} ~/Documents/Development/devconfigs/'
-alias jup='cd ~/Documents/Development/Jupyter; jupyter-lab --browser=chrome'
-alias jupn='cd ~/Documents/Development/Jupyter; jupyter notebook --browser=chrome'
+alias pip=pip3
 
 # tmux aliases
 alias :q='exit'
@@ -68,3 +51,22 @@ bindkey '^[[A' fzf-history-widget
 path+='/usr/local/bin/flake8'
 path+='/usr/local/bin'
 export PATH="/Users/khamui:$PATH"
+
+
+function ve() {
+    local py="python3"
+    if [ ! -d ./.venv ]; then
+        echo "creating venv..."
+        if ! $py -m venv .venv --prompt=$(basename $PWD) --without-pip; then
+            echo "ERROR: Problem creating venv" >&2
+            return 1
+        else
+            local whl=$($py -c "import pathlib, ensurepip; whl = list(pathlib.Path(ensurepip.__path__[0]).glob('_bundled/pip*.whl'))[0]; print(whl)")
+            echo "boostrapping pip using $whl"
+            .venv/bin/python $whl/pip install --upgrade pip setuptools wheel
+            source .venv/bin/activate
+        fi
+    else
+        source .venv/bin/activate
+    fi
+}
