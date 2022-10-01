@@ -83,10 +83,8 @@ Plug('Shougo/denite.nvim', {['do'] = ':UpdateRemotePlugins'})
 
 -- Colorscheme
 -- cmd [[Plug 'mhartington/oceanic-next'
-Plug 'haystackandroid/shoji'
 -- Plug 'cocopon/iceberg.vim'
 -- Plug 'owickstrom/vim-colors-paramount'
-Plug 'aonemd/quietlight.vim'
 Plug('sonph/onehalf', {['rtp'] = 'vim/'})
 
 -- Customized vim status line
