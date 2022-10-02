@@ -1,7 +1,8 @@
 local g = vim.g
 local map = vim.api.nvim_set_keymap
 
-g.mapleader = " "
+-- leader
+g.mapleader = ";"
 
 -- force remaps
 map('n', 'v', '<C-v>', {}) -- entering Visual Block
@@ -51,3 +52,32 @@ let g:copilot_no_tab_map = v:true
 -- ale lint
 map('n', '<leader>aj', ':ALENext<CR>', {noremap = true})
 map('n', '<leader>ak', ':ALEPrevious<CR>', {noremap = true})
+
+-- telescope
+map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', { noremap = true })
+map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>', { noremap = true })
+map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', { noremap = true })
+map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>', { noremap = true })
+
+-- lsp
+-- these keymappings are wrapped in a function because it is set conditionally.
+M = {}
+function M.lsp_keymaps(bufnr)
+  local bufmap = vim.api.nvim_buf_set_keymap
+  local opts = { noremap = true, silent = true }
+  bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  bufmap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  bufmap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  bufmap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+  bufmap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  bufmap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+  bufmap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+end
+return M
