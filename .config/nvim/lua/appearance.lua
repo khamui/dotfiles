@@ -3,14 +3,8 @@ cmd "syntax enable"
 cmd "colorscheme onehalflight"
 cmd "let g:airline_theme='onehalflight'"
 cmd "highlight ColorColumn ctermbg=255"
--- cmd "highlight LineNr ctermfg=252"
--- cmd "highlight LineNr ctermbg=231"
--- cmd "highlight FoldColumn ctermbg=231"
--- cmd "highlight NormalFloat ctermbg=255"
--- cmd "highlight PMenu ctermbg=255"
-
-local map = vim.api.nvim_set_keymap
-map('i', 'jk', '<ESC>', {noremap = true})
+cmd "filetype plugin on"
+cmd "let g:ale_fix_on_save = 0"
 
 local opt = vim.o
 opt.ruler = true
