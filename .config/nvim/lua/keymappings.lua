@@ -33,11 +33,11 @@ map('n', '<leader>"', 'viw<ESC>a"<ESC>bi"<ESC>lel', {noremap = true})
 map('n', '<leader>\'', 'viw<ESC>a\'<ESC>bi\'<ESC>lel', {noremap = true})
 map('n', '<leader>o', 'o<ESC>', {noremap = true})
 map('n', '<leader>O', 'O<ESC>', {noremap = true})
-map('n', '<leader>p', ':lua require("funcs").copy_to_next_empty_line("down")<CR>', {noremap = true })
-map('n', '<leader>P', ':lua require("funcs").copy_to_next_empty_line("up")<CR>', {noremap = true })
-map('n', '<leader>j', ':lua require("funcs").go_to_next_empty_line("down")<CR>', {noremap = true })
-map('n', '<leader>k', ':lua require("funcs").go_to_next_empty_line("up")<CR>', {noremap = true })
-map('n', '<leader>p', ':lua require("funcs").is_function_def()<CR>', {noremap = true })
+-- map('n', '<leader>p', ':lua require("funcs").copy_to_next_empty_line("down")<CR>', {noremap = true })
+-- map('n', '<leader>P', ':lua require("funcs").copy_to_next_empty_line("up")<CR>', {noremap = true })
+-- map('n', '<leader>j', ':lua require("funcs").go_to_next_empty_line("down")<CR>', {noremap = true })
+-- map('n', '<leader>k', ':lua require("funcs").go_to_next_empty_line("up")<CR>', {noremap = true })
+-- map('n', '<leader>p', ':lua require("funcs").is_function_def()<CR>', {noremap = true })
 
 -- split resize
 map('n', '<leader>+', ':vertical resize +5<CR>', {noremap = true})
@@ -58,6 +58,8 @@ map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', { n
 map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>', { noremap = true })
 map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', { noremap = true })
 map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>', { noremap = true })
+map('n', '<leader>fz', ':lua require("telescope").extensions.zoxide.list()<CR>', { noremap = true })
+map('n', '<leader>p', ':lua require("telescope").extensions.neoclip.default()<CR>', { noremap = true })
 
 -- lsp
 -- these keymappings are wrapped in a function because it is set conditionally.
