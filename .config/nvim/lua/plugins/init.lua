@@ -37,8 +37,16 @@ Plug 'vim-airline/vim-airline-themes'
 -- navigation
 Plug 'christoomey/vim-tmux-navigator'
 
+-- zoxide (telescope extension)
+Plug 'nvim-lua/popup.nvim'
+Plug 'jvgrootveld/telescope-zoxide'
+
+-- neoclip (telescope extension)
+Plug 'AckslD/nvim-neoclip.lua'
+
 vim.call ('plug#end')
 
 require('plugins.config-luasnip')
 require('plugins.config-cmp')
 require('plugins.config-treesitter')
+require('plugins.config-telescope')

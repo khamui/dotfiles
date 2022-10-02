@@ -1,6 +1,9 @@
 # Created by newuser for 5.7.1
 eval "$(starship init zsh)"
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # navigation aliases
 alias v='nvim'
 alias ..='cd ..'
