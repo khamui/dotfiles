@@ -3,7 +3,6 @@ cmd "syntax enable"
 cmd "colorscheme onehalflight"
 cmd "let g:airline_theme='onehalflight'"
 cmd "highlight ColorColumn ctermbg=255"
-cmd "filetype plugin on"
 cmd "let g:ale_fix_on_save = 0"
 
 local opt = vim.o

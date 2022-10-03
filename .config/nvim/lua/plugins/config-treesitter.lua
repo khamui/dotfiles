@@ -1,4 +1,9 @@
-require'nvim-treesitter.configs'.setup {
+local status_ok, configs = pcall('nvim-treesitter.configs')
+if not status_ok then
+  return
+end
+
+configs.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -10,7 +15,7 @@ require'nvim-treesitter.configs'.setup {
   },
   playground = {
     enable = true,
-    disable = {},
+    disable = {}, -- List of disabled languages
     updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
     persist_queries = false, -- Whether the query persists across vim sessions
     keybindings = {
@@ -31,5 +36,9 @@ require'nvim-treesitter.configs'.setup {
     use_virtual_text = true,
     lint_events = { 'BufWrite', 'CursorHold' }
   },
-  highlight = { enable = false }
+  highlight = { enable = false },
+  indent = {
+    enable = true,
+    disable = {}
+  }
 }
