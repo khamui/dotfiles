@@ -1,4 +1,4 @@
-# Created by newuser for 5.7.1
+# Updated 8.10.22 (manually, curl)
 eval "$(starship init zsh)"
 
 # zoxide
@@ -54,22 +54,3 @@ bindkey '^[[A' fzf-history-widget
 path+='/usr/local/bin/flake8'
 path+='/usr/local/bin'
 export PATH="/Users/khamui:$PATH"
-
-
-function ve() {
-    local py="python3"
-    if [ ! -d ./.venv ]; then
-        echo "creating venv..."
-        if ! $py -m venv .venv --prompt=$(basename $PWD) --without-pip; then
-            echo "ERROR: Problem creating venv" >&2
-            return 1
-        else
-            local whl=$($py -c "import pathlib, ensurepip; whl = list(pathlib.Path(ensurepip.__path__[0]).glob('_bundled/pip*.whl'))[0]; print(whl)")
-            echo "boostrapping pip using $whl"
-            .venv/bin/python $whl/pip install --upgrade pip setuptools wheel
-            source .venv/bin/activate
-        fi
-    else
-        source .venv/bin/activate
-    fi
-}
