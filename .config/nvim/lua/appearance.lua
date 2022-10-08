@@ -26,4 +26,4 @@ opt.splitright = true
 opt.backspace = "indent,eol,start"
 opt.colorcolumn="80"
 opt.mouse="a"
-opt.guicursor="n-c:block,i-ci:ver50,r-cr-v-ve:hor80,o:hor50"
+opt.guicursor="n-c:block,i-ci:ver50,r-cr-v-ve:hor80,o:hor50,a:blinkwait100-blinkoff150-blinkon150-Cursor"
