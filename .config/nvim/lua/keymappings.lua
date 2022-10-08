@@ -60,6 +60,7 @@ map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', { nore
 map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>', { noremap = true })
 map('n', '<leader>fz', ':lua require("telescope").extensions.zoxide.list()<CR>', { noremap = true })
 map('n', '<leader>p', ':lua require("telescope").extensions.neoclip.default()<CR>', { noremap = true })
+map('n', '<leader>P', ':Telescope neoclip star<CR>', { noremap = true })
 
 -- lsp
 -- these keymappings are wrapped in a function because it is set conditionally.
