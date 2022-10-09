@@ -36,6 +36,7 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"Development" = " "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
@@ -49,12 +50,26 @@ format = '[ $symbol $context ]($style) $path'
 
 [git_branch]
 symbol = ""
-style = "bg:195"
+style = "bg:195 bold 239"
 format = '[ $symbol $branch ]($style)'
 
+# [git_status]
+# style = "bg:195 bold purple"
+# format = '[$all_status$ahead_behind ]($style)'
+
 [git_status]
-style = "bg:195"
-format = '[$all_status$ahead_behind ]($style)'
+style="bg:195"
+conflicted = "ﰸ (bg:195 red)"
+ahead = " (bg:195 red)"
+behind = " (bg:195 red)"
+diverged = "[] (bg:195 9)"
+up_to_date = "[ ](bg:195 34)"
+untracked = "[ ](bg:195 9)"
+stashed = "[ ](bg:195 208)"
+modified = "[ ](bg:195 9)"
+staged = '[++\($count\)](bg:195 34)'
+deleted = "[] (bg:195 9)"
+format = '([$all_status$ahead_behind]($style))'
 
 [golang]
 symbol = " "
@@ -68,12 +83,12 @@ format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:189"
+style = "bg:79"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
 symbol = ""
-style = "bg:189"
+style = "bg:143"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
@@ -85,4 +100,4 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:254"
-format = '[ ♥ $time ]($style)'
+format = '[ $time ]($style)'
