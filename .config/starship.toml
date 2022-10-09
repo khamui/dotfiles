@@ -4,6 +4,7 @@ $directory\
 $git_branch\
 $git_status\
 $golang\
+$lua\
 $java\
 $nodejs\
 $python\
@@ -74,6 +75,11 @@ format = '([$all_status$ahead_behind]($style))'
 [golang]
 symbol = " "
 style = "bg:189"
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+symbol = " "
+style = "bg:25 fg:15"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
